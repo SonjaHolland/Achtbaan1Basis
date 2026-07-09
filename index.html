@@ -19,6 +19,20 @@ html,body{
     font-family:Arial;
 }
 
+/* Zwarte rand container */
+#frame{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:95vw;
+    height:95vh;
+    background:#000;
+    border:18px solid #000;      /* Zwarte rand */
+    border-radius:22px;          /* Mooie afgeronde hoeken */
+    overflow:hidden;
+}
+
 /* Startscherm */
 #startScreen{
     position:absolute;
@@ -92,23 +106,27 @@ html,body{
 </head>
 <body>
 
-<!-- Startscherm -->
-<div id="startScreen">
+<div id="frame">
 
-    <!-- Thumbnail -->
-    <img id="thumbnail" src="https://img.youtube.com/vi/SRDz8Vm1FEU/maxresdefault.jpg">
+    <!-- Startscherm -->
+    <div id="startScreen">
 
-    <!-- Rode knop -->
-    <div id="powerButton" onclick="startVideo()">
-        <img src="data:image/svg+xml;base64,PHN2ZyBmaWxsPSJ3aGl0ZSIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xMiAyLjV2MTVNMTEgMjEuNWMtNS40IDAtOS43LTQuMy05LjctOS43IDAtNS40IDQuMy05LjcgOS43LTkuNyA1LjQgMCA5LjcgNC4zIDkuNyA5LjcgMCA1LjQtNC4zIDkuNy05LjcgOS43eiIvPjwvc3ZnPg==" />
+        <!-- Thumbnail -->
+        <img id="thumbnail" src="https://img.youtube.com/vi/SRDz8Vm1FEU/maxresdefault.jpg">
+
+        <!-- Rode knop -->
+        <div id="powerButton" onclick="startVideo()">
+            <img src="data:image/svg+xml;base64,PHN2ZyBmaWxsPSJ3aGl0ZSIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xMiAyLjV2MTVNMTEgMjEuNWMtNS40IDAtOS43LTQuMy05LjctOS43IDAtNS40IDQuMy05LjcgOS43LTkuNyA1LjQgMCA5LjcgNC4zIDkuNyA5LjcgMCA1LjQtNC4zIDkuNy05LjcgOS43eiIvPjwvc3ZnPg==" />
+        </div>
+
     </div>
 
-</div>
+    <!-- Videospeler -->
+    <div id="playerContainer">
+        <iframe id="player" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        <button id="back" onclick="goBack()">← Back</button>
+    </div>
 
-<!-- Videospeler -->
-<div id="playerContainer">
-    <iframe id="player" allow="autoplay; fullscreen" allowfullscreen></iframe>
-    <button id="back" onclick="goBack()">← Back</button>
 </div>
 
 <script>
@@ -133,5 +151,6 @@ function goBack(){
 
 </body>
 </html>
+
 
 
